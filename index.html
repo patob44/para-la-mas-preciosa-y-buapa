@@ -5,11 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Fernanda Michelle</title>
     <style>
-        body { margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background-color: #fdf5e6; font-family: sans-serif; text-align: center; overflow: hidden; }
-        h1 { color: #8b0000; font-size: 1.5rem; margin-bottom: 40px; padding: 0 20px; }
-        .botones { position: relative; width: 100%; height: 300px; display: flex; justify-content: center; align-items: center; }
-        #btnSi { background-color: #8b0000; color: white; padding: 15px 30px; border: none; border-radius: 10px; font-size: 1.2rem; cursor: pointer; transition: 0.2s; z-index: 999; }
-        #btnNo { background-color: #666; color: white; padding: 10px 20px; border: none; border-radius: 10px; font-size: 1rem; cursor: pointer; position: absolute; transition: 0.1s; }
+        body { 
+            margin: 0; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            background-color: #fdf5e6; 
+            font-family: 'Georgia', serif; 
+            text-align: center; 
+            overflow: hidden; 
+        }
+        h1 { 
+            color: #8b0000; 
+            font-size: 1.6rem; 
+            margin-bottom: 30px; 
+            padding: 0 20px; 
+        }
+        .botones { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 20px; 
+            width: 100%;
+        }
+        #btnSi { 
+            background-color: #8b0000; 
+            color: white; 
+            padding: 12px 25px; 
+            border: none; 
+            border-radius: 8px; 
+            font-size: 1.1rem; 
+            cursor: pointer; 
+            z-index: 1000;
+            transition: transform 0.2s;
+        }
+        #btnNo { 
+            background-color: #666; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 8px; 
+            font-size: 1rem; 
+            cursor: pointer; 
+            position: relative; 
+        }
     </style>
 </head>
 <body>
@@ -22,13 +63,14 @@
     </div>
 
     <script>
-        let size = 1.2;
+        let size = 1.1;
 
         function mover() {
             const btnNo = document.getElementById('btnNo');
             const btnSi = document.getElementById('btnSi');
             
-            // Mover el botón No
+            // Hacer que el botón No empiece a saltar por toda la pantalla
+            btnNo.style.position = 'fixed';
             const x = Math.random() * (window.innerWidth - btnNo.offsetWidth);
             const y = Math.random() * (window.innerHeight - btnNo.offsetHeight);
             btnNo.style.left = x + 'px';
@@ -41,9 +83,10 @@
         }
 
         function aceptar() {
-            alert("Tiamo bonita, dime si qres hacer algo en especifico o yo pongo el plan ❤️");
-            
-            window.location.href = "https://wa.me/5214446014557?text=¡Acepto+ser+tu+San+Valentín!+❤️";
+            alert("Tiamo bonita, m dices si quieres hacer algo en específico o yo pongo el plan❤️");
+           
+            const miNumero = "5214446014557"; 
+            window.location.href = "https://wa.me/" + miNumero + "?text=¡Acepto+ser+tu+San+Valentín!+❤️";
         }
     </script>
 
